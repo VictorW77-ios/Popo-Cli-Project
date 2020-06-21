@@ -1,8 +1,6 @@
-# Popo
+# Popo CLI Project
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/popo`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Accountability should be the centerpiece of any fruitful discussion on police reform. This Ruby Gem, inspired by the countless Black lives lost to police brutality, aims to shift power into the hands of citizens and place the burden of accountability on law enforcement. The Popo Gem provides a CLI to view the records of officers across 10 different police departments via the OpenOversight searchable database.
 
 ## Installation
 

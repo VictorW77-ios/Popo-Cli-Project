@@ -1,6 +1,2 @@
-require "popo/version"
-
-module Popo
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "./popo/version"
+require_relative './popo/cli'

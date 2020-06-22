@@ -1,2 +1,5 @@
 #!/usr/bin/env ruby
 
+require './lib/popo'
+
+Popo::CLI.new.call

@@ -1,11 +1,11 @@
 class Popo::CLI
 
     def call 
-        puts "You've come to the right place. Please enter any information you have about the officer. It's okay if you don't have the answer to every question. Press enter"
-        begin
+        puts "You've come to the right place. Please enter any information you have about the officer. It's okay if you don't have the answer to every question."
+        begin_cli
     end
 
-    def begin 
+    def begin_cli
         puts "Select a department: 
         1 = Chicago PD
         2 = Berkeley PD
@@ -16,6 +16,30 @@ class Popo::CLI
         7 = New York City PD
         8 = Salt Lake City PD
         9 = Buffalo PD"
+
+        input = gets.chomp()
+
+        if input == "1" 
+            puts 
+        elsif input == "2"
+            puts 
+        elsif input == "3"
+            puts 
+        elsif input == "4"
+            puts 
+        elsif input == "5"
+            puts 
+        elsif input == "6"
+            puts 
+        elsif input == "7"
+            puts 
+        elsif input == "8"
+            puts 
+        elsif input == "9"
+            puts 
+        else 
+            puts "Please enter a number 1-9"
+        end
 
 
     end

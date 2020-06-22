@@ -35,6 +35,6 @@ A command line interface that shows police history/reviews
 	
 	if n again, sends user to next officer name + department — loop 
 
-	if program has no more data to output to user, program asks for additional info 
+	if program has no more data to output to user, program asks for additional info
 
 

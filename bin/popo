@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/popo'
+require "bundler/setup"
+require "popo"
 
 Popo::CLI.new.call

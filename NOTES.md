@@ -37,4 +37,14 @@ A command line interface that shows police history/reviews
 
 	if program has no more data to output to user, program asks for additional info
 
+department class? 
+	> Departments have 2 instances - CPD and NYPD 
+		-- both have a name and several officers 
+		-- officers have various attributes  
+	
+AND
+
+officer class? 
+	> officer attributes: name, race, sex, badge number 
+	> these attributes should be searchable and render possible results depending on user input 
 

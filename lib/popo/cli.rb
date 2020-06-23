@@ -1,38 +1,42 @@
 class Popo::CLI
 
     def call 
-        list_departments
+        intro
+        user_menu
         officer_id
     end
 
-    def list_departments
-        puts "You've come to the right place. Please enter any information you have about the officer. It's okay if you don't have the answer to every question. 
+    def intro
+        puts "You've come to the right place. It's okay if you don't have the answer to every question."
         
-        Select a department: 
-        1 = Chicago PD
-        2 = Immigration and Customs Enforcement (ICE)
-        3 = New York City PD"
-
-        input = gets.strip
-        case input 
-        when "1"
-            puts 
-
-        if input == "1" 
-            puts 
-        elsif input == "2"
-            puts 
-        elsif input == "3"
-            puts 
-        else 
-            puts "Please enter a number 1-9"
-        end
-
-
+        @departments = Popo::Department.chosen_dep
     end
+
+
+    def user_menu
+        input = nil 
+        while input != "exit"        
+            puts "Enter the number of the department you want to search:"
+            input = gets.strip.downcase
+            
+            if input.to_i > 0 
+                puts @departments[input.to_i-1]
+            elsif input == "back"
+                intro
+            else 
+                puts "Please enter 1 or 2. Type 'back' to see the options again. Type 'exit' to exit."
+            end
+        end
+    end
+
+
+
 
     def officer_id
         puts "Do you remember any part of the officer's last name?"
     end
+
+
+
 
 end

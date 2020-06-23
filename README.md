@@ -1,6 +1,6 @@
 # Popo CLI Project
 
-Accountability should be the centerpiece of any fruitful discussion on police reform. This Ruby Gem, inspired by the countless Black lives lost to police brutality, aims to shift power into the hands of citizens and place the burden of accountability on law enforcement. The Popo Gem provides a CLI to look-up officers in the Chicago and New York City police departments (departments with the [highest rates] of police shootings)(https://mappingpoliceviolence.org/cities) via the [OpenOversight](https://openoversight.com/) searchable database.
+Accountability should be the centerpiece of any fruitful discussion on police reform. This Ruby Gem, inspired by the countless Black lives lost to police brutality, aims to shift power into the hands of citizens and place the burden of accountability on law enforcement. The Popo Gem provides a CLI to look-up officers in the Chicago and New York City police departments (departments with the [highest rates](https://mappingpoliceviolence.org/cities) of police shootings) via the [OpenOversight](https://openoversight.com/) searchable database.
 
 ## Installation
 

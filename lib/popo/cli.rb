@@ -10,6 +10,10 @@ class Popo::CLI
         puts "You've come to the right place. It's okay if you don't have the answer to every question."
         
         @departments = Popo::Department.chosen_dep
+        @departments.each.with_index(1) do |department, i| #starts the index at 1 so I don't have to enter 'i-1'.
+            puts "#{i} = #{department.name}"
+        end
+
     end
 
 
@@ -20,7 +24,8 @@ class Popo::CLI
             input = gets.strip.downcase
             
             if input.to_i > 0 
-                puts @departments[input.to_i-1]
+                the_department = @departments[input.to_i-1]
+                puts "#{the_department.name}" #want the array index of the deal
             elsif input == "back"
                 intro
             else 

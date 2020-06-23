@@ -2,22 +2,21 @@ class Popo::Department
     attr_accessor :name, :officers, :url
 
     def self.chosen_dep
-        puts <<-DOC.gsub /^\s*/, ''
-            1 = Chicago PD 
-            2 = New York City PD 
-        DOC
-        dep_1 = self.new 
-        dep_1.name = "Chicago PD"
-        dep_1.officers = ""
-        dep_1.url = https://openoversight.com/department/1
+        self.scrape_dep
+    end
 
-        dep_2 = self.new 
-        dep_2.name = "New York City PD"
-        dep_2.officers = ""
-        dep_2.url = https://openoversight.com/department/7
+    def self.scrape_dep
+        departments = []
 
-        [dep_1, dep_2]
+        departments << self.scrape_site
+      #I want to return real data 
 
+        departments 
+    end
+
+    def self.scrape_site
+        doc = Nokogiri::HTML(open("https://openoversight.com/"))
+        binding.pry
     end
 
 end

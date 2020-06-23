@@ -1,12 +1,13 @@
 class Popo::CLI
 
     def call 
-        puts "You've come to the right place. Please enter any information you have about the officer. It's okay if you don't have the answer to every question."
         begin_cli
     end
 
     def begin_cli
-        puts "Select a department: 
+        puts "You've come to the right place. Please enter any information you have about the officer. It's okay if you don't have the answer to every question. 
+
+        Select a department: 
         1 = Chicago PD
         2 = Berkeley PD
         3 = Oakland PD 

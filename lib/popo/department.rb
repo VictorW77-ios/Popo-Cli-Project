@@ -15,7 +15,7 @@ class Popo::Department
     end
 
     def self.scrape_site
-        doc = Nokogiri::HTML(open("https://openoversight.com/"))
+        doc = Nokogiri::HTML(open("https://openoversight.com/browse"))
         binding.pry
     end
 

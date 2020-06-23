@@ -25,7 +25,7 @@ class Popo::CLI
             
             if input.to_i > 0 
                 the_department = @departments[input.to_i-1]
-                puts "#{the_department.name}" #want the array index of the deal
+                puts "#{the_department.name}" #want the array index of the department
             elsif input == "back"
                 intro
             else 

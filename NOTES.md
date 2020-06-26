@@ -22,7 +22,8 @@ d. What classes will you be using?
 e. How will you display data one level deep to the user?
 - The user chooses a department (1 level) and then chooses an officer to get more information on (2nd level). 
 
-A command line interface that shows police history/reviews 
+I may do something like this: 
+A command line interface that shows police history
 	greeting: “Please enter officer name, part of name, vehicle license plate number, or badge number” 
 
 	user enters officer name, part of name, vehicle license plate, or badge number or whatever variables that are manageable.
@@ -47,4 +48,14 @@ AND
 officer class? 
 	> officer attributes: name, race, sex, badge number 
 	> these attributes should be searchable and render possible results depending on user input 
+
+Can’t scrape a javascript heavy site so it’s best to show the user a list of officers from the departments, maybe the first 20 or so & then let the user choose which officer they want more information on 
+
+After consulting with Lantz, the new flow is: 
+Welcome Page 
+	Select the department 
+		A list of officer names come up alongside their race, gender, and age
+			User selects the officer they think they want to get info on 
+				An array of more information about the officer loads up 
+					The user can either go back to the Welcome Page, General List, or exit the app
 

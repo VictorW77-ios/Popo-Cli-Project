@@ -23,14 +23,13 @@ class Popo::CLI
             input = gets.strip.downcase
             break if input == "exit"
             
-            if input.to_i > 0
+            if input.to_i == 1 || 2 
                 the_department = @departments[input.to_i-1]
                 puts "You entered: #{the_department}" #want the array index of the department
                 officer_id
-                break 
+                break
             elsif input == "back"
                 intro
-                break
             else 
                 puts "Please enter 1 or 2. Type 'back' to see the options again. Type 'exit' to exit."
             end

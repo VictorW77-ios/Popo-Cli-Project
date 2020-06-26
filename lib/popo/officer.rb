@@ -5,15 +5,18 @@ class Popo::Officer
         @name, @race, @gender, @age, @badge_number = name, race, gender, age, badge_number
     end
     
-    def self.scrape_source
-        officer_info = []
-        officer_info << self.site_scrape
+    def self.officer_scrape
+        chicago_list = []
+        ny_list = []
+        
+        chicago_list << self.chicago_officers
+        ny_list << self.ny_officers
 
-        officer_info
+        
     end
 
-    def site_scrape
-        doc = Nokogiri::HTML(open("https://openoversight.com/"))
+    def self.chicago_officers
+        doc = Nokogiri::HTML(open("https://openoversight.com/department/1?gender=Not+Sure&min_age=16&rank=Not+Sure&race=Not+Sure&page=1&max_age=100&from_search=False"))
 
         officer = self.new 
         officer.name = 
@@ -24,4 +27,8 @@ class Popo::Officer
 
         officer
     end
+
+    def self.ny_officers
+        doc = 
+    end 
 end

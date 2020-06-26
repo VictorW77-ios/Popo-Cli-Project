@@ -3,7 +3,7 @@ class Popo::CLI
     def call 
         intro
         user_menu
-        # officer_id
+        officer_id
     end
 
     def intro
@@ -38,7 +38,12 @@ class Popo::CLI
     end
 
     def officer_id
-        #should go to officer.rb to fetch an array of officers based on user input
+        # the user has already selected a department, this method's purpose 
+        # is to show the user a list of officers from the first page of the department's url 
+        # on OpenOversight this may mean there needs to be two separate methods 
+        # one for Chicago and one for NY 
+        puts "Enter the number of the officer you want more information on:"
+        
     end
 
     # def exit_message 

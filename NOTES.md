@@ -25,17 +25,17 @@ e. How will you display data one level deep to the user?
 A command line interface that shows police history/reviews 
 	greeting: “Please enter officer name, part of name, vehicle license plate number, or badge number” 
 
-	user enters officer name, part of name, vehicle license plate, or badge number
+	user enters officer name, part of name, vehicle license plate, or badge number or whatever variables that are manageable.
 	
 	outputs first data set that matches user input as “[officer name], [police department]? Y/n”
 
-	if Y, outputs a rating of that officer, the number of a lawyer in the city with the police department, and gives user the option to input a rating/review of their own 
+	if Y, outputs officer badge number, rank, gender, and race
 
 	if n, sends user to next officer name + police department 
 	
 	if n again, sends user to next officer name + department — loop 
 
-	if program has no more data to output to user, program asks for additional info
+	if program has no more data to output to user, program outputs "I'm sorry. That officer doesn't seem to be in the database." Then takes user back to main menu.
 
 department class? 
 	> Departments have 2 instances - CPD and NYPD 

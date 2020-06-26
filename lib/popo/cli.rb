@@ -4,6 +4,7 @@ class Popo::CLI
         intro
         user_menu
         officer_id
+        exit_message
     end
 
     def intro
@@ -11,7 +12,7 @@ class Popo::CLI
         
         @departments = Popo::Department.chosen_dep
         @departments.each.with_index(1) do |department, i| #starts the index at 1 so I don't have to enter 'i-1'.
-            puts "#{i} = #{department.name}"
+            puts "#{i} = #{department}"
         end
 
     end
@@ -19,27 +20,39 @@ class Popo::CLI
 
     def user_menu
         input = nil 
-        while input != "exit"        
+        while input != "exit"
             puts "Enter the number of the department you want to search:"
             input = gets.strip.downcase
             
-            if input.to_i > 0 
+            if input.to_i > 0
                 the_department = @departments[input.to_i-1]
-                puts "#{the_department.name}" #want the array index of the department
+                puts "You entered: #{the_department}" #want the array index of the department
+                officer_id
             elsif input == "back"
                 intro
+            elsif input == "exit"
+                exit_message
             else 
                 puts "Please enter 1 or 2. Type 'back' to see the options again. Type 'exit' to exit."
             end
         end
     end
 
-
-
-
     def officer_id
-        puts "Do you remember any part of the officer's last name?"
+        input = gets.strip.downcase
+        puts "Do you remember any part of the officer's name?"
+        if input == "yes"
+            puts "Please enter whatever you remember:"
+        elsif input == "no"
+            puts "Do you remember any part of the officer's badge number?"
+        else
+            puts "Invalid entry. Please enter any part of the officer's name or type 'no'."
+        end
     end
+
+    def exit_message 
+        puts "Have a good day."
+    end 
 
 
 

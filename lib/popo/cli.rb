@@ -7,7 +7,7 @@ class Popo::CLI
     end
 
     def intro
-        puts "You've come to the right place. It's okay if you don't have the answer to every question."
+        puts "You've come to the right place."
         
         @departments = Popo::Department.chosen_dep
         @departments.each.with_index(1) do |department, i| #starts the index at 1 so I don't have to enter 'i-1'.
@@ -38,7 +38,7 @@ class Popo::CLI
     end
 
     def officer_id
-        puts "Do you remember any part of the officer's name?"
+        #should go to officer.rb to fetch an array of officers based on user input
     end
 
     # def exit_message 

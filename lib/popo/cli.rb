@@ -23,10 +23,12 @@ class Popo::CLI
         loop while input != "exit"
             puts "Enter the number of the department you want to search:"
             input = gets.strip.downcase
+            break if input.to_i == 1 || 2
             
             if input.to_i > 0
                 the_department = @departments[input.to_i-1]
                 puts "You entered: #{the_department}" #want the array index of the department
+                break
                 officer_id
             elsif input == "back"
                 intro

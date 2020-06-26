@@ -4,7 +4,6 @@ class Popo::CLI
         intro
         user_menu
         officer_id
-        exit_message
     end
 
     def intro
@@ -20,16 +19,16 @@ class Popo::CLI
 
     def user_menu
         input = nil 
-        loop while input != "exit"
+        loop do
             puts "Enter the number of the department you want to search:"
             input = gets.strip.downcase
-            break if input.to_i == 1 || 2
+            break if input = "exit"
             
             if input.to_i > 0
                 the_department = @departments[input.to_i-1]
                 puts "You entered: #{the_department}" #want the array index of the department
-                break
                 officer_id
+                break
             elsif input == "back"
                 intro
             else 

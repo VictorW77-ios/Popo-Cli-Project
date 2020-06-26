@@ -31,6 +31,8 @@ class Popo::CLI
                 break
             elsif input == "back"
                 intro
+            elsif input == "exit"
+                puts "Have a good day."
             else 
                 puts "Please enter 1 or 2. Type 'back' to see the options again. Type 'exit' to exit."
             end
@@ -38,20 +40,20 @@ class Popo::CLI
     end
 
     def officer_id
-        input = gets.strip.downcase
-        puts "Do you remember any part of the officer's name?"
-        if input == "yes"
-            puts "Please enter whatever you remember:"
-        elsif input == "no"
-            puts "Do you remember any part of the officer's badge number?"
-        else
-            puts "Invalid entry. Please enter any part of the officer's name or type 'no'."
-        end
+        # input = gets.strip.downcase
+        # puts "Do you remember any part of the officer's name?"
+        # if input == "yes"
+        #     puts "Please enter whatever you remember:"
+        # elsif input == "no"
+        #     puts "Do you remember any part of the officer's badge number?"
+        # else
+        #     puts "Invalid entry. Please enter any part of the officer's name or type 'no'."
+        # end
     end
 
-    def exit_message 
-        puts "Have a good day."
-    end 
+    # def exit_message 
+    #     puts "Have a good day."
+    # end 
 
 
 

@@ -8,19 +8,19 @@
 8. Program 
 
 a. What will your app do? What is the user experience?
-
+- Generates a list of officers from which the user can dissect more information about each officer.
 
 b. Where will you get your data from? (This might be a website that you will scrape or if you prefer, an API.) 
-
+- OpenOversight.com 
 
 c. What will you need to do with the data once you have got it? 
-
+- I'll need to scrape the site for both department info & officer info and structure the data in a presentable way to the user using class inheritance, Nokogiri, etc!
 
 d. What classes will you be using? 
-
+- A Department class, Officer class, CLI class that serves as HQ for the project, and a Popo class for running the app. 
 
 e. How will you display data one level deep to the user?
-
+- The user chooses a department (1 level) and then chooses an officer to get more information on (2nd level). 
 
 A command line interface that shows police history/reviews 
 	greeting: “Please enter officer name, part of name, vehicle license plate number, or badge number” 

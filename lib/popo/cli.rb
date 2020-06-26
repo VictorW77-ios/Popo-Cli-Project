@@ -20,7 +20,7 @@ class Popo::CLI
 
     def user_menu
         input = nil 
-        while input != "exit"
+        loop while input != "exit"
             puts "Enter the number of the department you want to search:"
             input = gets.strip.downcase
             
@@ -30,8 +30,6 @@ class Popo::CLI
                 officer_id
             elsif input == "back"
                 intro
-            elsif input == "exit"
-                exit_message
             else 
                 puts "Please enter 1 or 2. Type 'back' to see the options again. Type 'exit' to exit."
             end

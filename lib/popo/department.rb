@@ -1,5 +1,5 @@
 class Popo::Department
-    attr_reader :name 
+    attr_accessor :name 
 
     def self.chosen_dep
         self.scrape_dep
@@ -17,7 +17,7 @@ class Popo::Department
 
     def self.scrape_chicago
         doc = Nokogiri::HTML(open("https://openoversight.com/browse"))
-        
+
         chi = self.new
         chi.name = doc.css(".btn-group").children[14].text[0..24].strip
         #chi_officers = doc.css("a.btn.btn-lg.btn-primary")[4]["href"]

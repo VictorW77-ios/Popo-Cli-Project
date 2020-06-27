@@ -23,15 +23,16 @@ class Popo::CLI
             
         if input.to_i == 1 || 2 
         the_department = @departments[input.to_i-1]
-            puts "You entered: #{the_department}" #want the array index of the department
+            puts "You entered: #{the_department}"
             officer_id
-                
         elsif input == "back"
             intro
+        elsif input == "exit"
+            puts "Have a good day."
+            exit
         else 
             puts "Please enter 1 or 2. Type 'back' to see the options again. Type 'exit' to exit."
         end
-        # puts "Have a good day."
     end
 
     def officer_id

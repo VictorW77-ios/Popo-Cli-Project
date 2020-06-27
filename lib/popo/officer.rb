@@ -1,6 +1,8 @@
 class Popo::Officer 
     attr_accessor :name, :race, :gender, :age, :badge_number
 
+    @all = []
+    
     def initialize 
         @name, @race, @gender, @age, @badge_number = name, race, gender, age, badge_number
     end

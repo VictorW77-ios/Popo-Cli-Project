@@ -25,7 +25,7 @@ class Popo::CLI
             puts "\nEnter the number of the department you want to search:"
             input = gets.strip.downcase
 
-            if input.to_i == 1 || 2
+            if input.to_i == 1 || input.to_i == 2
                 the_department = @departments[input.to_i-1]
                 puts "\nYou entered: #{the_department}"
                 puts "\n"
@@ -34,7 +34,7 @@ class Popo::CLI
                 intro
             elsif input == "exit"
                 puts "\nHave a good day."
-                exit
+                break
             else 
                 puts "\nPlease enter 1 or 2. Type 'back' to see the options again. Type 'exit' to exit."
             end
@@ -50,12 +50,5 @@ class Popo::CLI
         puts "Enter the number of the officer you want more information on:"
         
     end
-
-    # def exit_message 
-    #     puts "Have a good day."
-    # end 
-
-
-
 
 end

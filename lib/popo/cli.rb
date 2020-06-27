@@ -13,7 +13,7 @@ class Popo::CLI
         @departments.each.with_index(1) do |department, i| #starts the index at 1 so I don't have to enter 'i-1'.
             puts "#{i} = #{department}"
         end
-
+        
     end
 
 

@@ -1,18 +1,42 @@
 class Popo::Officer 
-    attr_accessor :name, :race, :gender, :age, :badge_number
+    attr_accessor :name, :race, :gender, :age, :badge_num
 
     @all = []
 
     def initialize 
-        @name, @race, @gender, @age, @badge_number = name, race, gender, age, badge_number
+        @name, @race, @gender, @age, @badge_num = name, race, gender, age, badge_num
         @@all << self
     end
 
-    def self.find(info)
-        self.all[id-1]
+    def self.all 
+        @@all
     end
 
-    
+    def self.find(info)
+        self.all[i-1]
+    end
+
+    def name 
+        @name = 
+    end 
+
+    def race 
+        @race = 
+    end 
+
+    def gender 
+        @gender = 
+    end 
+
+    def age 
+        @age = 
+    end 
+
+    def badge_num 
+        @badge_num = 
+    end 
+
+
     
     def self.officer_scrape
         chicago_list = []

@@ -1,14 +1,13 @@
 class Popo::Department
-    attr_accessor :name #officers
+    attr_reader :name 
 
     def initialize(name)
         @name = name 
-        #@officers = officers
     end
 
-    def name 
-        @name
-    end
+    # def self.name 
+    #     @name
+    # end
 
     def self.chosen_dep
         self.scrape_dep

@@ -24,7 +24,7 @@ class Popo::CLI
         if input.to_i == 1 || 2 
         the_department = @departments[input.to_i-1]
             puts "You entered: #{the_department}"
-            officer_id
+            # officer_id
         elsif input == "back"
             intro
         elsif input == "exit"

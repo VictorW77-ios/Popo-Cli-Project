@@ -36,7 +36,7 @@ class Popo::CLI
     end
 
     def officer_id
-        puts "#{officer.name}"
+        # puts "#{officer.name}"
         # the user has already selected a department, this method's purpose 
         # is to show the user a list of officers from the first page of the department's url 
         # on OpenOversight this may mean there needs to be two separate methods 

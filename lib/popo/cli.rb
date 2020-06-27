@@ -26,7 +26,8 @@ class Popo::CLI
             the_department = @departments[input.to_i-1]
             puts "\nYou entered: #{the_department}"
             puts "\n"
-        elsif input == "back"
+            finding_chi_officers
+        if input == "back"
             intro
         elsif input == "exit"
             puts "\nHave a good day."
@@ -36,18 +37,30 @@ class Popo::CLI
         end
     end
 
-    def finding_officers 
+    def finding_chi_officers 
+        puts "Enter the number of the officer you want more information on:"
+        puts "\n"
+        input = gets.strip.downcase
+        
+        @officers = Popo::Officer.chicago_officers
+        @officers.each_with_index(1) do |officer, i|
+            
+            
+        end
+        
+        if input == "back"
+            user_menu
+        elsif 
+        end
+    end 
 
+    def finding_ny_officers 
+        @officers = Popo::Officer.finding_ny_officers
+        @officers.each_with_index(1) do |officer, i| 
 
     end 
 
-    def officer_id
-        puts "Enter the number of the officer you want more information on:"
-        input = gets.strip.downcase
-        if input == "back"
-            user_menu
-            
+ 
         
-    end
 
 end

@@ -16,25 +16,25 @@ class Popo::Officer
         self.all[i-1]
     end
 
-    def name 
-        @name = 
-    end 
+    # def name 
+    #     @name = 
+    # end 
 
-    def race 
-        @race = 
-    end 
+    # def race 
+    #     @race = 
+    # end 
 
-    def gender 
-        @gender = 
-    end 
+    # def gender 
+    #     @gender = 
+    # end 
 
-    def age 
-        @age = 
-    end 
+    # def age 
+    #     @age = 
+    # end 
 
-    def badge_num 
-        @badge_num = 
-    end 
+    # def badge_num 
+    #     @badge_num = 
+    # end 
 
 
     
@@ -53,8 +53,8 @@ class Popo::Officer
     def self.chicago_officers
         doc = Nokogiri::HTML(open("https://openoversight.com/department/1?gender=Not+Sure&min_age=16&rank=Not+Sure&race=Not+Sure&page=1&max_age=100&from_search=False"))
         binding.pry
-        # chicago_info = [
-        # ch_name = , 
+        # chicago_info = doc.css("div.col-md-6.col-xs-12").children.text[
+        # ch_name = doc.css("div.col-md-6.col-xs-12").children[4].text.strip.delete("       #13705"), 
         # ch_race = , 
         # ch_gender = , 
         # ch_age =   ]

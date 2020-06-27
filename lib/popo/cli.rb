@@ -29,12 +29,13 @@ class Popo::CLI
                 the_department = @departments[input.to_i-1]
                 puts "\nYou entered: #{the_department}"
                 puts "\n"
-                officer_id
+                break
             elsif input == "back"
                 intro
             elsif input == "exit"
                 puts "\nHave a good day."
-                break
+                # break
+                exit
             else 
                 puts "\nPlease enter 1 or 2. Type 'back' to see the options again. Type 'exit' to exit."
             end
@@ -42,12 +43,11 @@ class Popo::CLI
     end
 
     def officer_id
-        # puts "#{officer.name}"
-        # the user has already selected a department, this method's purpose 
-        # is to show the user a list of officers from the first page of the department's url 
-        # on OpenOversight this may mean there needs to be two separate methods 
-        # one for Chicago and one for NY 
         puts "Enter the number of the officer you want more information on:"
+        input = gets.strip.downcase
+        if input == "back"
+            user_menu
+            
         
     end
 

@@ -19,12 +19,13 @@ class Popo::CLI
 
 
     def user_menu 
-        input = nil
-        while input != "exit"
+        # input = nil
+        # while input != "exit"
+        loop do 
             puts "\nEnter the number of the department you want to search:"
             input = gets.strip.downcase
-                
-            if input.to_i > 0
+
+            if input.to_i == 1 || 2
                 the_department = @departments[input.to_i-1]
                 puts "\nYou entered: #{the_department}"
                 puts "\n"
@@ -32,10 +33,10 @@ class Popo::CLI
             elsif input == "back"
                 intro
             elsif input == "exit"
-                puts "Have a good day."
+                puts "\nHave a good day."
                 exit
             else 
-                puts "Please enter 1 or 2. Type 'back' to see the options again. Type 'exit' to exit."
+                puts "\nPlease enter 1 or 2. Type 'back' to see the options again. Type 'exit' to exit."
             end
         end
     end
@@ -46,7 +47,7 @@ class Popo::CLI
         # is to show the user a list of officers from the first page of the department's url 
         # on OpenOversight this may mean there needs to be two separate methods 
         # one for Chicago and one for NY 
-        "Enter the number of the officer you want more information on:"
+        puts "Enter the number of the officer you want more information on:"
         
     end
 

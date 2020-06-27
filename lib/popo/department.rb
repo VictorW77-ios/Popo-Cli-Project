@@ -1,6 +1,10 @@
 class Popo::Department
     attr_accessor :name 
 
+    def initialize
+        @name = name
+    end 
+
     def self.chosen_dep
         self.scrape_dep
     end

@@ -52,7 +52,7 @@ class Popo::Officer
 
     def self.chicago_officers
         doc = Nokogiri::HTML(open("https://openoversight.com/department/1?gender=Not+Sure&min_age=16&rank=Not+Sure&race=Not+Sure&page=1&max_age=100&from_search=False"))
-        # binding.pry
+        binding.pry
         # chicago_info = [
         # ch_name = , 
         # ch_race = , 

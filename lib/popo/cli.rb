@@ -18,26 +18,24 @@ class Popo::CLI
 
 
     def user_menu
-        loop do
-            puts "Enter the number of the department you want to search:"
-            input = gets.strip.downcase
-            break if input == "exit"
+        puts "Enter the number of the department you want to search:"
+        input = gets.strip.downcase
             
-            if input.to_i == 1 || 2 
-                the_department = @departments[input.to_i-1]
-                puts "You entered: #{the_department}" #want the array index of the department
-                officer_id
-                break
-            elsif input == "back"
-                intro
-            else 
-                puts "Please enter 1 or 2. Type 'back' to see the options again. Type 'exit' to exit."
-            end
+        if input.to_i == 1 || 2 
+        the_department = @departments[input.to_i-1]
+            puts "You entered: #{the_department}" #want the array index of the department
+            officer_id
+                
+        elsif input == "back"
+            intro
+        else 
+            puts "Please enter 1 or 2. Type 'back' to see the options again. Type 'exit' to exit."
         end
-        puts "Have a good day."
+        # puts "Have a good day."
     end
 
     def officer_id
+        puts "#{officer.name}"
         # the user has already selected a department, this method's purpose 
         # is to show the user a list of officers from the first page of the department's url 
         # on OpenOversight this may mean there needs to be two separate methods 

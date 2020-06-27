@@ -11,19 +11,22 @@ class Popo::CLI
         
         @departments = Popo::Department.chosen_dep
         @departments.each.with_index(1) do |department, i| #starts the index at 1 so I don't have to enter 'i-1'.
-            puts "#{i} = #{department}"
+            puts "#{i} = #{department.name}"
         end
 
     end
 
 
-    def user_menu
+    def user_menu 
+        input = nil
+        while input != "exit"
         puts "Enter the number of the department you want to search:"
         input = gets.strip.downcase
             
-        if input.to_i == 1 || 2 
-        the_department = @departments[input.to_i-1]
+        if input.to_i > 0
+            the_department = @departments[input.to_i-1]
             puts "You entered: #{the_department}"
+            puts "\n\n"
             # officer_id
         elsif input == "back"
             intro

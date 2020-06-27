@@ -8,10 +8,11 @@ class Popo::CLI
 
     def intro
         puts "You've come to the right place."
+        puts "\n"
         
         @departments = Popo::Department.chosen_dep
         @departments.each.with_index(1) do |department, i| #starts the index at 1 so I don't have to enter 'i-1'.
-            puts "#{i} = #{department.name}"
+            puts "#{i} = #{department}"
         end
 
     end
@@ -20,21 +21,22 @@ class Popo::CLI
     def user_menu 
         input = nil
         while input != "exit"
-        puts "Enter the number of the department you want to search:"
-        input = gets.strip.downcase
-            
-        if input.to_i > 0
-            the_department = @departments[input.to_i-1]
-            puts "You entered: #{the_department}"
-            puts "\n\n"
-            # officer_id
-        elsif input == "back"
-            intro
-        elsif input == "exit"
-            puts "Have a good day."
-            exit
-        else 
-            puts "Please enter 1 or 2. Type 'back' to see the options again. Type 'exit' to exit."
+            puts "\nEnter the number of the department you want to search:"
+            input = gets.strip.downcase
+                
+            if input.to_i > 0
+                the_department = @departments[input.to_i-1]
+                puts "\nYou entered: #{the_department}"
+                puts "\n"
+                officer_id
+            elsif input == "back"
+                intro
+            elsif input == "exit"
+                puts "Have a good day."
+                exit
+            else 
+                puts "Please enter 1 or 2. Type 'back' to see the options again. Type 'exit' to exit."
+            end
         end
     end
 
@@ -44,7 +46,7 @@ class Popo::CLI
         # is to show the user a list of officers from the first page of the department's url 
         # on OpenOversight this may mean there needs to be two separate methods 
         # one for Chicago and one for NY 
-        puts "Enter the number of the officer you want more information on:"
+        "Enter the number of the officer you want more information on:"
         
     end
 

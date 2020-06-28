@@ -8,7 +8,7 @@ class Popo::CLI
     def general_list
         puts "Welcome to the Chicago PD Officer Finder"
         puts "\n"
-        @officers = Popo::Officer.chicago_officers
+        @officers = Popo::Officer.officer_scrape
 
         @officers.each_with_index(1) do |officer, i|
             puts "#{i}. #{officer.name}"

@@ -1,12 +1,9 @@
 class Popo::Officer 
     attr_accessor :name, :race, :gender, :age, :badge_num
-
-    # @@all = []
-
-    # def initialize(name=nil, race=nil, gender=nil, age=nil, badge_num=nil)
-    #     @name, @race, @gender, @age, @badge_num = name, race, gender, age, badge_num
-    #     @@all << self
-    # end
+    
+    def self.chicago 
+        self.officer_scrape
+    end 
 
     def self.officer_scrape
         officers = []
@@ -28,6 +25,8 @@ class Popo::Officer
         officer.gender = doc.css("table.table.table-hover tr td").children[11].text
         officer.age = doc.css("table.table.table-hover tr td").children[13].text.gsub("None (None)", "Unknown")
         officer.badge_num = doc.css("table.table.table-hover tbody tr td").children[17].text
+
+        officer
     end
 
     def self.scrape_two
@@ -38,6 +37,8 @@ class Popo::Officer
         officer.gender = doc.css("table.table.table-hover tr td").children[11].text
         officer.age = doc.css("table.table.table-hover tr td").children[13].text
         officer.badge_num = doc.css("table.table.table-hover tr td").children[17].text
+
+        officer
     end 
 
     def self.scrape_three
@@ -48,6 +49,8 @@ class Popo::Officer
         officer.gender = doc.css("table.table.table-hover tr td").children[11].text
         officer.age = doc.css("table.table.table-hover tr td").children[13].text
         officer.badge_num = doc.css("table.table.table-hover tr td").children[17].text
+
+        officer
     end 
 
     def self.scrape_four
@@ -58,6 +61,8 @@ class Popo::Officer
         officer.gender = doc.css("table.table.table-hover tr td").children[11].text
         officer.age = doc.css("table.table.table-hover tr td").children[13].text
         officer.badge_num = doc.css("table.table.table-hover tr td").children[17].text
+
+        officer
 
     end
 end

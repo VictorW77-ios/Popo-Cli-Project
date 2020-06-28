@@ -6,10 +6,10 @@ class Popo::CLI
     end
 
     def intro
-        puts "You've come to the right place."
+        puts "Welcome to the Chicago PD Officer Finder"
         puts "\n"
         
-        @departments = Popo::Department.chosen_dep
+        @departments = Popo::Department.chicago_pd
         @departments.each.with_index(1) do |department, i| #starts the index at 1 so I don't have to enter 'i-1'.
             puts "#{i} = #{department}"
         end
@@ -26,17 +26,13 @@ class Popo::CLI
             puts "\nYou entered: #{the_department}"
             puts "\n"
             finding_chi_officers
-        elsif input.to_i == 2 
-            puts "\nYou entered: #{the_department}"
-            puts "\n"
-            finding_ny_officers
         elsif input == "back"
             intro
         elsif input == "exit"
             puts "\nHave a good day."
             exit
         else 
-            puts "\nPlease enter 1 or 2. Type 'back' to see the options again. Type 'exit' to exit."
+            puts "\nType 'back' to return to the main menu. Type 'exit' to exit."
         end
     end
 
@@ -55,28 +51,7 @@ class Popo::CLI
 
     end 
 
-    def finding_ny_officers 
-        puts "Enter the number of the officer you want more information on:" 
-        puts "\n"
-        input = gets.strip.to_i
-
-        @officers = Popo::Officer.ny_list
-
-        @officers.each_with_index(1) do |officer, i| 
-            puts "#{i}. #{officer.name}"
-        end
-
-        ny_officer_info
-
-    end 
-
     def chi_officer_info
-        puts "        Name: #{officer.name}     "
-        puts "Race: #{officer.race}     Sex: #{officer.gender}"
-        puts "Age: #{officer.age}       Badge #: #{officer.badge_num}"
-    end 
-
-    def ny_officer_info 
         puts "        Name: #{officer.name}     "
         puts "Race: #{officer.race}     Sex: #{officer.gender}"
         puts "Age: #{officer.age}       Badge #: #{officer.badge_num}"

@@ -2,6 +2,6 @@
 
 require "bundler/setup"
 require "popo"
-avd 
+
 
 Popo::CLI.new.call

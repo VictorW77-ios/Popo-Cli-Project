@@ -3,6 +3,7 @@ class Popo::CLI
     def call 
         general_list
         choose_officer
+        exit_message
     end
 
     def general_list
@@ -18,31 +19,31 @@ class Popo::CLI
 
 
     def choose_officer
-        puts "Enter the number of the officer you want more information on:"
-        puts "\n"
-        input = gets.strip.to_i
-    
-        if input.to_i == 1 || input.to_i == 2 || input.to_i == 3 || input.to_i == 4
-            the_officer = @officers[input.to_i-1]
-            puts "You selected: #{the_officer.name}"
-            officer_info
-        elsif input == "back"
-            general_list
-        else 
-            puts "\n Please enter a number 1-4. Type 'back' to go back or 'exit' to exit."
+        input = nil
+        while input != "exit"
+            puts "Enter the number of the officer you want more information on:"
+            puts "\n"
+            input = gets.strip.downcase
+        
+            if input.to_i == 1 || input.to_i == 2 || input.to_i == 3 || input.to_i == 4
+                the_officer = @officers[input.to_i-1]
+
+                puts "        Name: #{the_officer.name}     "
+                puts "Race: #{the_officer.race}            Sex: #{the_officer.gender}"
+                puts "Birth Year/Age: #{the_officer.age}       Badge #: #{the_officer.badge_num}"
+                puts "--------------------------------------------"
+                puts "Type 'back' to search another officer.\n" 
+            elsif input == "back"
+                general_list
+            else 
+                puts "Please enter a number 1-4. Type 'back' to go back or 'exit' to exit." if input != "exit"
+            end
         end
 
     end 
 
-    def officer_info
-        puts ""
-        puts "        Name: #{officer.name}     "
-        puts "Race: #{officer.race}     Sex: #{officer.gender}"
-        puts "Birth Year/Age: #{officer.age}       Badge #: #{officer.badge_num}"
-    end 
-    
     def exit_message 
-        puts "\n Stay informed!"
+        puts "Stay informed!"
     end 
         
 

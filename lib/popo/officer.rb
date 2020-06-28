@@ -3,7 +3,7 @@ class Popo::Officer
 
     @all = []
 
-    def initialize 
+    def initialize(name=nil, race=nil, gender=nil, age=nil, badge_num=nil)
         @name, @race, @gender, @age, @badge_num = name, race, gender, age, badge_num
         @@all << self
     end

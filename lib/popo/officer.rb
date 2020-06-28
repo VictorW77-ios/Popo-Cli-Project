@@ -56,14 +56,4 @@ class Popo::Officer
         # ch_age =   ]
        
     end
-
-    def self.ny_officers
-        doc = Nokogiri::HTML(open("https://openoversight.com/department/7"))
-        binding.pry
-        # ny_info = [ 
-        # ny_name = , 
-        # ny_race = , 
-        # ny_gender = , 
-        # ny_age =  ] 
-    end 
 end

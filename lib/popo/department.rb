@@ -10,12 +10,12 @@ class Popo::Department
     end
 
     def self.scrape_dep
-        departments = []
+        officers = []
 
-        departments << self.scrape_chicago
+        officers << self.scrape_chicago
       #I want to return real data 
 
-        departments 
+        officers 
     end
 
     def self.scrape_chicago

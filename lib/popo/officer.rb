@@ -36,37 +36,36 @@ class Popo::Officer
         # officer.gender = doc.css("table.table.table-hover tr td").children[11].text
         # officer.age = doc.css("table.table.table-hover tr td").children[13].text.gsub("None (None)", "Unknown")
         # officer.badge_num = doc.css("table.table.table-hover tbody tr td").children[17].text
-       
     end
 
     def self.officer_two
         doc = Nokogiri::HTML(open("https://openoversight.com/officer/11942"))
-        binding.pry
         officer = self.new
-        # officer.name = doc.css("div.col-md-6.col-xs-12 a").children[0].text.tr("\n"," ").split.join(' ')
-        # officer.race = 
-        # officer.gender = 
-        # officer.age = 
-        # officer.badge_num = 
+        # officer.name = doc.css("table.table.table-hover tr td").children[1].text.split.join(' ')
+        # officer.race = doc.css("table.table.table-hover tr td").children[9].text
+        # officer.gender = doc.css("table.table.table-hover tr td").children[11].text
+        # officer.age = doc.css("table.table.table-hover tr td").children[13].text
+        # officer.badge_num = doc.css("table.table.table-hover tr td").children[17].text
     end 
 
     def self.officer_three
+        doc = Nokogiri::HTML(open("https://openoversight.com/officer/11944"))
         officer = self.new
-        # officer.name = doc.css("div.col-md-6.col-xs-12 a").children[0].text.tr("\n"," ").split.join(' ')
-        # officer.race = 
-        # officer.gender = 
-        # officer.age = 
-        # officer.badge_num = 
-
+        # officer.name = doc.css("table.table.table-hover tr td").children[1].text.split.join(' ')
+        # officer.race = doc.css("table.table.table-hover tr td").children[9].text
+        # officer.gender = doc.css("table.table.table-hover tr td").children[11].text
+        # officer.age = doc.css("table.table.table-hover tr td").children[13].text
+        # officer.badge_num = doc.css("table.table.table-hover tr td").children[17].text
     end 
 
     def self.officer_four
         officer = self.new
-        # officer.name = doc.css("div.col-md-6.col-xs-12 a").children[0].text.tr("\n"," ").split.join(' ')
-        # officer.race = 
-        # officer.gender = 
-        # officer.age = 
-        # officer.badge_num = 
+        binding.pry
+        # officer.name = doc.css("table.table.table-hover tr td").children[1].text.split.join(' ')
+        # officer.race = doc.css("table.table.table-hover tr td").children[9].text
+        # officer.gender = doc.css("table.table.table-hover tr td").children[11].text
+        # officer.age = doc.css("table.table.table-hover tr td").children[13].text
+        # officer.badge_num = doc.css("table.table.table-hover tr td").children[17].text
 
     end
 end

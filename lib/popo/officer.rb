@@ -54,7 +54,7 @@ class Popo::Officer
         doc = Nokogiri::HTML(open("https://openoversight.com/department/1?gender=Not+Sure&min_age=16&rank=Not+Sure&race=Not+Sure&page=1&max_age=100&from_search=False"))
         binding.pry
         # chicago_info = doc.css("div.col-md-6.col-xs-12").children.text[
-        # ch_name = doc.css("div.col-md-6.col-xs-12").children[4].text.strip.delete("       #13705"), 
+        # ch_name = doc.css("div.col-md-6.col-xs-12 a").children[0..3].text.strip
         # ch_race = , 
         # ch_gender = , 
         # ch_age =   ]

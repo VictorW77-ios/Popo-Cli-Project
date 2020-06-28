@@ -19,53 +19,53 @@ class Popo::Officer
     def self.officer_scrape
         officers = []
         
-        officers << self.officer_one
-        officers << self.officer_two
-        officers << self.officer_three
-        officers << self.officer_four
+        officers << self.scrape_one
+        officers << self.scrape_two
+        officers << self.scrape_three
+        officers << self.scrape_four
 
         officers
         
     end
 
-    def self.officer_one 
+    def self.scrape_one 
         doc = Nokogiri::HTML(open("https://openoversight.com/officer/11943"))
         officer = self.new
-        # officer.name = doc.css("table.table.table-hover tr td").children[1].text.split.join(' ')
-        # officer.race = doc.css("table.table.table-hover tr td").children[9].text
-        # officer.gender = doc.css("table.table.table-hover tr td").children[11].text
-        # officer.age = doc.css("table.table.table-hover tr td").children[13].text.gsub("None (None)", "Unknown")
-        # officer.badge_num = doc.css("table.table.table-hover tbody tr td").children[17].text
+        officer.name = doc.css("table.table.table-hover tr td").children[1].text.split.join(' ')
+        officer.race = doc.css("table.table.table-hover tr td").children[9].text
+        officer.gender = doc.css("table.table.table-hover tr td").children[11].text
+        officer.age = doc.css("table.table.table-hover tr td").children[13].text.gsub("None (None)", "Unknown")
+        officer.badge_num = doc.css("table.table.table-hover tbody tr td").children[17].text
     end
 
-    def self.officer_two
+    def self.scrape_two
         doc = Nokogiri::HTML(open("https://openoversight.com/officer/11942"))
         officer = self.new
-        # officer.name = doc.css("table.table.table-hover tr td").children[1].text.split.join(' ')
-        # officer.race = doc.css("table.table.table-hover tr td").children[9].text
-        # officer.gender = doc.css("table.table.table-hover tr td").children[11].text
-        # officer.age = doc.css("table.table.table-hover tr td").children[13].text
-        # officer.badge_num = doc.css("table.table.table-hover tr td").children[17].text
+        officer.name = doc.css("table.table.table-hover tr td").children[1].text.split.join(' ')
+        officer.race = doc.css("table.table.table-hover tr td").children[9].text
+        officer.gender = doc.css("table.table.table-hover tr td").children[11].text
+        officer.age = doc.css("table.table.table-hover tr td").children[13].text
+        officer.badge_num = doc.css("table.table.table-hover tr td").children[17].text
     end 
 
-    def self.officer_three
+    def self.scrape_three
         doc = Nokogiri::HTML(open("https://openoversight.com/officer/11944"))
         officer = self.new
-        # officer.name = doc.css("table.table.table-hover tr td").children[1].text.split.join(' ')
-        # officer.race = doc.css("table.table.table-hover tr td").children[9].text
-        # officer.gender = doc.css("table.table.table-hover tr td").children[11].text
-        # officer.age = doc.css("table.table.table-hover tr td").children[13].text
-        # officer.badge_num = doc.css("table.table.table-hover tr td").children[17].text
+        officer.name = doc.css("table.table.table-hover tr td").children[1].text.split.join(' ')
+        officer.race = doc.css("table.table.table-hover tr td").children[9].text
+        officer.gender = doc.css("table.table.table-hover tr td").children[11].text
+        officer.age = doc.css("table.table.table-hover tr td").children[13].text
+        officer.badge_num = doc.css("table.table.table-hover tr td").children[17].text
     end 
 
-    def self.officer_four
+    def self.scrape_four
+        doc = Nokogiri::HTML(open("https://openoversight.com/officer/11945"))
         officer = self.new
-        binding.pry
-        # officer.name = doc.css("table.table.table-hover tr td").children[1].text.split.join(' ')
-        # officer.race = doc.css("table.table.table-hover tr td").children[9].text
-        # officer.gender = doc.css("table.table.table-hover tr td").children[11].text
-        # officer.age = doc.css("table.table.table-hover tr td").children[13].text
-        # officer.badge_num = doc.css("table.table.table-hover tr td").children[17].text
+        officer.name = doc.css("table.table.table-hover tr td").children[1].text.split.join(' ')
+        officer.race = doc.css("table.table.table-hover tr td").children[9].text
+        officer.gender = doc.css("table.table.table-hover tr td").children[11].text
+        officer.age = doc.css("table.table.table-hover tr td").children[13].text
+        officer.badge_num = doc.css("table.table.table-hover tr td").children[17].text
 
     end
 end

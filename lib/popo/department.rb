@@ -5,7 +5,7 @@ class Popo::Department
         @name = name
     end 
 
-    def self.chosen_dep
+    def self.chicago_pd
         self.scrape_dep
     end
 

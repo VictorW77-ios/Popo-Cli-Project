@@ -19,34 +19,54 @@ class Popo::Officer
     def self.officer_scrape
         officers = []
         
-        officers << self.chicago_officers
+        officers << self.officer_one
+        officers << self.officer_two
+        officers << self.officer_three
+        officers << self.officer_four
 
         officers
         
     end
 
-    def self.officer_one
-        doc = Nokogiri::HTML(open("https://openoversight.com/department/1?gender=Not+Sure&min_age=16&rank=Not+Sure&race=Not+Sure&page=1&max_age=100&from_search=False"))
-
+    def self.officer_one 
+        doc = Nokogiri::HTML(open("https://openoversight.com/officer/11943"))
         officer = self.new
-        officer.name = doc.css("div.col-md-6.col-xs-12 a").children[0..3].text.tr("\n"," ").split.join(' ')
-        # officer.race = 
-        # officer.gender = 
-        # officer.age = 
-        # officer.badge_num = 
-        # chicago_info = doc.css("div.col-md-6.col-xs-12").children[4..32].text.split.join(' ')
+        # officer.name = doc.css("table.table.table-hover tr td").children[1].text.split.join(' ')
+        # officer.race = doc.css("table.table.table-hover tr td").children[9].text
+        # officer.gender = doc.css("table.table.table-hover tr td").children[11].text
+        # officer.age = doc.css("table.table.table-hover tr td").children[13].text.gsub("None (None)", "Unknown")
+        # officer.badge_num = doc.css("table.table.table-hover tbody tr td").children[17].text
        
     end
 
     def self.officer_two
-
+        doc = Nokogiri::HTML(open("https://openoversight.com/officer/11942"))
+        binding.pry
+        officer = self.new
+        # officer.name = doc.css("div.col-md-6.col-xs-12 a").children[0].text.tr("\n"," ").split.join(' ')
+        # officer.race = 
+        # officer.gender = 
+        # officer.age = 
+        # officer.badge_num = 
     end 
 
     def self.officer_three
+        officer = self.new
+        # officer.name = doc.css("div.col-md-6.col-xs-12 a").children[0].text.tr("\n"," ").split.join(' ')
+        # officer.race = 
+        # officer.gender = 
+        # officer.age = 
+        # officer.badge_num = 
 
     end 
 
     def self.officer_four
-        
+        officer = self.new
+        # officer.name = doc.css("div.col-md-6.col-xs-12 a").children[0].text.tr("\n"," ").split.join(' ')
+        # officer.race = 
+        # officer.gender = 
+        # officer.age = 
+        # officer.badge_num = 
+
     end
 end

@@ -10,7 +10,7 @@ class Popo::CLI
         puts "\n"
         @officers = Popo::Officer.officer_scrape
 
-        @officers.each_with_index(1) do |officer, i|
+        @officers.each.with_index(1) do |officer, i|
             puts "#{i}. #{officer.name}"
         end
         

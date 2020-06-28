@@ -40,19 +40,15 @@ class Popo::Officer
     
     def self.officer_scrape
         chicago_list = []
-        ny_list = []
         
         chicago_list << self.chicago_officers
-        ny_list << self.ny_officers
 
         chicago_list
-        ny_list
         
     end
 
     def self.chicago_officers
         doc = Nokogiri::HTML(open("https://openoversight.com/department/1?gender=Not+Sure&min_age=16&rank=Not+Sure&race=Not+Sure&page=1&max_age=100&from_search=False"))
-        binding.pry
         # chicago_info = doc.css("div.col-md-6.col-xs-12").children[4..32].text.split.join(' ')
         # ch_name = doc.css("div.col-md-6.col-xs-12 a").children[0..3].text.tr("\n"," ").split.join(' ')
         # ch_race = , 
@@ -63,6 +59,7 @@ class Popo::Officer
 
     def self.ny_officers
         doc = Nokogiri::HTML(open("https://openoversight.com/department/7"))
+        binding.pry
         # ny_info = [ 
         # ny_name = , 
         # ny_race = , 

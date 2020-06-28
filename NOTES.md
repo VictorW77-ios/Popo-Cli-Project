@@ -39,8 +39,8 @@ A command line interface that shows police history
 	if program has no more data to output to user, program outputs "I'm sorry. That officer doesn't seem to be in the database." Then takes user back to main menu.
 
 department class? 
-	> Departments have 2 - CPD and NYPD 
-		-- both have a "name" instance variable
+	> One instance of a department - Chicago PD
+		-- has a "name" instance variable
 	
 AND
 
@@ -52,7 +52,7 @@ Can’t scrape a javascript heavy site so it’s best to show the user a list of
 
 After consulting with Lantz, the new flow is: 
 Welcome Page 
-	Select the department 
+	General List
 		A list of officer names come up
 			User selects the officer they think they want to get info on 
 				An array of more information about the officer loads up (name, race, age, gender, badge number)
@@ -60,10 +60,10 @@ Welcome Page
 
 To do list before submitting!! 06/28/2020: 
 
-- [ ] Finish scraping for the general list of officer names for each department 
+- [ ] Finish scraping for the general list of officer names 
 - [ ] Change the if/else statement in cli.rb to a case statement (too many conditionals)
         - [ ] Run to see if CLI is working and gets user to the general list 
-- [ ] Figure out how to go from the general list to a breakdown of each officer’s info for each department 
+- [ ] Figure out how to go from the general list to a breakdown of each officer’s info 
         - [ ] Make sure to include options for the user to go back / exit if that’s even necessary 
         - [ ] Run to see if program is working, if it is - WRITE BLOG POST & DO DEMO
         - [ ] If not, go back to the drawing board 

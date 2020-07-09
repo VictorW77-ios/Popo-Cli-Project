@@ -3,6 +3,11 @@ class Popo::Officer
 
     @@all = []
 
+    def self.new_officer_by_index(officer)
+        self.new(doc.css(""))
+
+    end 
+
     def initialize(name, race, gender, badge_num, age)
         @name = name 
         @race = race
@@ -13,35 +18,35 @@ class Popo::Officer
         @@all << self 
     end 
 
-    def name 
-
-        
-    end 
-
-
     def self.all
         @@all 
     end 
+
+    def self.find(i)
+        self.all[i-1]
+    end 
     
-    def self.chicago 
-        self.officer_scrape
-    end 
 
-    def self.officer_scrape
-        officers = []
+
+    # def self.chicago 
+    #     self.officer_scrape
+    # end 
+
+    # def self.officer_scrape
+    #     officers = []
         
-        officers << self.scrape_one
-        officers << self.scrape_two
-        officers << self.scrape_three
-        officers << self.scrape_four
+    #     officers << self.scrape_one
+    #     officers << self.scrape_two
+    #     officers << self.scrape_three
+    #     officers << self.scrape_four
 
-        officers
+    #     officers
         
-    end
+    # end
 
-    def reading_officers
+    # def reading_officers
 
-    end 
+    # end 
 
     # make separate file for scraping 
    

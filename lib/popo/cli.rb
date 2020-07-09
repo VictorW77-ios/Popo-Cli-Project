@@ -10,7 +10,7 @@ class Popo::CLI
         puts "Welcome to the Chicago PD Officer Finder"
         puts "\n"
         @officers = Popo::Officer.officer_scrape
-
+        
         @officers.each.with_index(1) do |officer, i|
             puts "#{i}. #{officer.name}"
         end
@@ -46,5 +46,7 @@ class Popo::CLI
         puts "Stay informed!"
     end 
         
+
+
 
 end

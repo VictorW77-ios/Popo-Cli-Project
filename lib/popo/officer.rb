@@ -16,23 +16,13 @@ class Popo::Officer
         @@all 
     end 
     
+    def self.find_officer # tells program to find the corresponding officer's name
+        @@all.detect {|officer| officer.name == name} # double equals comparison operator
+    end 
 
-
-    # def self.chicago 
-    #     self.officer_scrape
-    # end 
-
-    # def self.officer_scrape
-    #     officers = []
-        
-    #     officers << self.scrape_one
-    #     officers << self.scrape_two
-    #     officers << self.scrape_three
-    #     officers << self.scrape_four
-
-    #     officers
-        
-    # end
+    def self.find_info_between_markers(marker1, marker2)
+       self[/#{Regexp.escape(marker1)}(.*?)#{Regexp.escape(marker2)}/m, 1] # putting the m modifier after the regex allows this method to search beyond just one line
+    end 
 
     # def reading_officers
 

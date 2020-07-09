@@ -16,16 +16,20 @@ class Popo::Scraper
 
     def self.scrape_openoversight
         doc = Nokogiri::HTML(open("https://openoversight.com/department/1"))
-        binding.pry
+        # binding.pry
         officer = self.new 
         officer.name = doc.css("div.col-md-6.col-xs-12 h2 a").text.split.join(' ')
-        officer.race = 
-        officer.gender = 
+        # officer.race = 
+        # officer.gender = 
         officer.badge_num = doc.css("div.col-md-6.col-xs-12 h2 small").text.tr("#", " ").split.join(' ')
         
-        officers_scrape.each do |officer| # iterated over each officer
-            Popo::Officer.new_officer_by_index(officer)
-        end
+        
     end 
 
+    # def create_officers
+    #     officers_scrape.each do |officer| # iterated over each officer
+    #         Popo::Officer.new_officer_by_index(officer)
+    #     end
+    # end
+            
 end 

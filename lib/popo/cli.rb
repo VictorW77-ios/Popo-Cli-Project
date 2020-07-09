@@ -9,7 +9,7 @@ class Popo::CLI
     def general_list
         puts "Welcome to the Chicago PD Officer Finder"
         puts "\n"
-        @officers = Popo::Officer.officer_scrape
+        @officers = Popo::Scraper.officer_scrape
         
         @officers.each.with_index(1) do |officer, i|
             puts "#{i}. #{officer.name}"
@@ -28,9 +28,9 @@ class Popo::CLI
             if input.to_i == 1 || input.to_i == 2 || input.to_i == 3 || input.to_i == 4
                 the_officer = @officers[input.to_i-1]
 
-                puts "        Name: #{the_officer.name}     "
-                puts "Race: #{the_officer.race}            Sex: #{the_officer.gender}"
-                puts "Birth Year/Age: #{the_officer.age}       Badge #: #{the_officer.badge_num}"
+                puts "        Name: #{the_officer.name}    Badge # : #{the_officer.badge_num} "
+                # puts "Race: #{the_officer.race}            Sex: #{the_officer.gender}"
+                # puts "Birth Year/Age: #{the_officer.age}         
                 puts "--------------------------------------------"
                 puts "Type 'back' to search another officer.\n" 
             elsif input == "back"

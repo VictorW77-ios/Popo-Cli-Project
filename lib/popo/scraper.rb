@@ -1,19 +1,28 @@
 class Popo::Scraper
 
     def self.get_page 
-        Nokogiri::HTML(open("https://openoversight.com/department/1"))
-        # binding.pry
+        self.officers_scrape
         # name & badge num : doc.css("div.col-md-6.col-xs-12 h2").text 
         # names : doc.css("div.col-md-6.col-xs-12 h2 a").text.split.join(' ')
         # badge nums : doc.css("div.col-md-6.col-xs-12 h2 small").text.tr("#", " ").split.join(' ') 
 
     end 
 
-    def officers_scrape # scraped by index
-        self.get_page.css("div.col-md-6.col-xs-12 h2").text
+    def self.officers_scrape # scraped by index
+        officers = [] 
+
+        officers << self.scrape_openoversight
     end 
 
-    def make_officers
+    def self.scrape_openoversight
+        doc = Nokogiri::HTML(open("https://openoversight.com/department/1"))
+        binding.pry
+        officer = self.new 
+        officer.name = doc.css("div.col-md-6.col-xs-12 h2 a").text.split.join(' ')
+        officer.race = 
+        officer.gender = 
+        officer.badge_num = doc.css("div.col-md-6.col-xs-12 h2 small").text.tr("#", " ").split.join(' ')
+        
         officers_scrape.each do |officer| # iterated over each officer
             Popo::Officer.new_officer_by_index(officer)
         end

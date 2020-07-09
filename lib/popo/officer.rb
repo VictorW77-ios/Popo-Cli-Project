@@ -1,29 +1,19 @@
 class Popo::Officer 
-    attr_accessor :name, :race, :gender, :age, :badge_num
+    attr_accessor :name, :race, :gender, :badge_num
 
     @@all = []
 
-    def self.new_officer_by_index(officer)
-        self.new(doc.css(""))
-
-    end 
-
-    def initialize(name, race, gender, badge_num, age)
+    def initialize(name, race, gender, badge_num)
         @name = name 
         @race = race
         @gender = gender 
         @badge_num = badge_num 
-        @age = age 
 
         @@all << self 
     end 
 
     def self.all
         @@all 
-    end 
-
-    def self.find(i)
-        self.all[i-1]
     end 
     
 

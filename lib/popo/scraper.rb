@@ -1,8 +1,13 @@
-class Scraper < Officer
-    include Popo
+require_relative 'officer'
 
-    def initialize(name, race, gender, badge_num)
-        super(name, race, gender, badge_num)
+class Popo::Scraper
+    attr_accessor :name, :race, :gender, :badge_num
+
+    def initialize
+       @name = name 
+       @race = race 
+       @gender = gender 
+       @badge_num = badge_num
     end 
     # defining an initialize method here chains this 
     # to the initialize method in the Officer class. 
@@ -17,19 +22,19 @@ class Scraper < Officer
         officers = [] 
         # binding.pry
 
-        officers << self.scrape_openoversight
+        officers << self.scrape_officer_info
 
         officers
     end 
 
-    def self.scrape_openoversight
+    def self.scrape_officer_info
         doc = Nokogiri::HTML(open("https://openoversight.com/department/1"))
         # binding.pry
         officer = self.new
         
-        officer.name = doc.css("h2 a").map {|el| el.text.strip.tr("\n", " ") }
-        officer.race = doc.css("dd").map {|el| el.text.strip}
-        officer.gender = doc.css("dd").map {|el| el.text.strip}
+        officer.name = doc.css("h2 a").map {|n| n.text.strip.tr("\n", " ") }
+        officer.race = doc.css("dd").map {|r| r.text.strip}
+        officer.gender = doc.css("dd").map {|g| g.text.strip}
         # doc.css("dd").map {|el| el.text.strip} returns an array 
         # of all officer attributes (rank, race, gender, num of photos) 
         # I DON'T WANT/NEED THIS 

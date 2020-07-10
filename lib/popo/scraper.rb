@@ -16,10 +16,10 @@ class Popo::Scraper
 
     def self.scrape_openoversight
         doc = Nokogiri::HTML(open("https://openoversight.com/department/1"))
-
+        binding.pry
         officer = self.new 
         
-        officer.name = doc.css("h2 a").text.strip.split.join(' ')
+        officer.name = doc.css("h2 a").map {|el| el.text.strip.tr("\n", " ") }
         # name.split.map()
         officer.race = doc.search("div.col-md-6.col-xs-6").text.split.join(' ')
         officer.gender = doc.search("div.col-md-6.col-xs-6").text.split.join(' ')

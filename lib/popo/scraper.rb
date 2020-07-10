@@ -1,5 +1,5 @@
 class Popo::Scraper
-    attr_accessor :name, :race, :gender, :badge_num
+    # attr_accessor :name, :race, :gender, :badge_num
 
     def self.get_page 
         self.officers_scrape
@@ -20,10 +20,10 @@ class Popo::Scraper
         officer = self.new 
         
         officer.name = doc.css("h2 a").map {|el| el.text.strip.tr("\n", " ") }
-        # name.split.map()
         officer.race = doc.search("div.col-md-6.col-xs-6").text.split.join(' ')
         officer.gender = doc.search("div.col-md-6.col-xs-6").text.split.join(' ')
-        officer.badge_num = doc.css("div.col-md-6.col-xs-12 h2 small").text.tr("#", " ").split.join(' ')
+        # doc.css("dd").map {|el| el.text.strip}
+        officer.badge_num = doc.css("h2 small").map {|el| el.text.strip}
 
         officer
     end 

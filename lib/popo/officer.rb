@@ -15,6 +15,10 @@ class Popo::Officer
     def self.all
         @@all 
     end 
+
+    def get_officer_details 
+        Popo::Scraper.officer_scrape
+    end 
     
     # def self.find_officer # tells program to find the corresponding officer's name
     #     @@all.detect {|officer| officer.name == name} # double equals comparison operator

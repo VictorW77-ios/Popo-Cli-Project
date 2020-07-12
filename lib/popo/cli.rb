@@ -9,7 +9,7 @@ class Popo::CLI
     def general_list
         puts "Welcome to the Chicago PD Officer Finder"
         puts "\n"
-        @officers = Popo::Scraper.officers_scrape
+        @officers = Popo::Scraper.get_page
         
         @officers.each.with_index(1) do |officer, i|
             puts "#{i}. #{officer.name}"

@@ -1,20 +1,20 @@
 class Popo::Officer 
-    attr_accessor :name, :race, :gender, :badge_num
+    # attr_accessor :name, :race, :gender, :badge_num
 
-    @@all = []
+    # @@all = []
 
-    def initialize(name, race, gender, badge_num)
-        @name = name 
-        @race = race
-        @gender = gender 
-        @badge_num = badge_num 
+    # def initialize(name, race, gender, badge_num)
+    #     @name = name 
+    #     @race = race
+    #     @gender = gender 
+    #     @badge_num = badge_num 
 
-        @@all << self 
-    end 
+    #     @@all << self 
+    # end 
 
-    def self.all
-        @@all 
-    end 
+    # def self.all
+    #     @@all 
+    # end 
 
     def get_officer_details 
         Popo::Scraper.officer_scrape

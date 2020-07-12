@@ -1,4 +1,4 @@
-# The CLI classes houses the code responsible for the user interface
+# The CLI class houses the code responsible for the user interface
 
 class Popo::CLI
 

@@ -10,11 +10,12 @@ class Popo::Scraper
         self.get_page.css(".list-group-item")
     end 
 
-    def self.make_officers # creates new instances of an Officer // defines it's attributes
+    def self.make_officers # creates new instances of an Officer // writes it's attributes
+       # binding.pry
         self.get_officer_info.each { |element| 
             name = element.css("h2 a").map {|n| n.text.strip.tr("\n", " ") } # returns a string within an array -- looks cool
-            race = element.css(".list-group-item > div.row > div:last-child > .row > div:first-child > dl > dd:last-child").map { |r| r.text.strip.split(/([[:upper:]][[:lower:]]*)/).join("") }
-            gender = element.css(".list-group-item > div.row > div > .row > div:last-child > dl > dd").map { |g| g.text.delete("0").scan /\w/ }.reject(&:empty?)
+            race = element.css("div:first-child > dl > dd:last-child").map { |r| r.text.strip.split(/([[:upper:]][[:lower:]]*)/).join("") }
+            gender = element.css("div:last-child > dl > dd").map { |g| g.text.delete("0") }.reject(&:empty?)
             badge_num = element.css("h2 small").map {|bn| bn.text.strip}
 
             Popo::Officer.new(name, race, gender, badge_num) # creates a new instance of an Officer 

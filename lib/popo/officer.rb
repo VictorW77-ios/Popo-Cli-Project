@@ -12,7 +12,7 @@ class Popo::Officer
        @race = race 
        @gender = gender 
        @badge_num = badge_num
-
+       
        save_info
     end 
 
@@ -25,7 +25,7 @@ class Popo::Officer
     end 
 
     def self.find_officer(id)
-        @@all[id.to_i-1] # looks at array, finds officer by running "index - 1"
+        @@all[id.to_i-1] # looks at #all, finds officer by running "index - 1"
     end 
 
     def self.list_officers 
@@ -37,10 +37,10 @@ class Popo::Officer
     def self.list_officer_info(index)
         officer = self.find_officer(index)
         puts " ----------------------------------------------------------------------------------- "
-        puts "|                    Name: ".colorize(:red) + "#{officer.name}                      |"
-        puts "|                    Badge #: ".colorize(:red) + "#{officer.badge_num}              |"
-        puts "|                    Race: ".colorize(:red) + "#{officer.race}                      |" 
-        puts "|                    Sex:".colorize(:red) + "#{officer.gender}                      |"
+        puts "                    Name: ".colorize(:red) + "#{officer.name}"
+        puts "                    Badge #: ".colorize(:red) + "#{officer.badge_num}"
+        puts "                    Race: ".colorize(:red) + "#{officer.race}" 
+        puts "                    Sex:".colorize(:red) + "#{officer.gender}"
         puts " ----------------------------------------------------------------------------------- "
     end 
    

@@ -29,18 +29,11 @@ class Popo::Scraper
 
     def self.scrape_officer_info
         doc = Nokogiri::HTML(open("https://openoversight.com/department/1"))
-        # binding.pry
         officer = self.new
         
         officer.name = doc.css("h2 a").map {|n| n.text.strip.tr("\n", " ") }
-        officer.race = doc.css("dd").map {|r| r.text.strip}
-        officer.gender = doc.css("dd").map {|g| g.text.strip}
-        # doc.css("dd").map {|el| el.text.strip} returns an array 
-        # of all officer attributes (rank, race, gender, num of photos) 
-        # I DON'T WANT/NEED THIS 
-        # I need to find a way to return JUST the races and genders of the officers.
-        # maybe interation like with name & badge_num? 
-        # or dynamic interpolation?  
+        officer.race = doc.css(".list-group-item > div.row > div:last-child > .row > div:first-child > dl > dd:last-child").text.split(/([[:upper:]][[:lower:]]*)/).join(" ").split(",")
+        officer.gender = doc.css(".list-group-item > div.row > div > .row > div:last-child > dl > dd").text.delete("0").scan /\w/
         officer.badge_num = doc.css("h2 small").map {|el| el.text.strip}
 
         officer

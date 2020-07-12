@@ -1,37 +1,47 @@
+# The Officer class' job is to house all the attributes and methods associated
+# with the officers and their characteristics and communicate that knowledge
+# to the CLI class 
+
 class Popo::Officer 
-    # attr_accessor :name, :race, :gender, :badge_num
+    attr_accessor :name, :race, :gender, :badge_num
 
-    # @@all = []
+    @@all = []
 
-    # def initialize(name, race, gender, badge_num)
-    #     @name = name 
-    #     @race = race
-    #     @gender = gender 
-    #     @badge_num = badge_num 
+    def initialize(name, race, gender, badge_num)
+       @name = name 
+       @race = race 
+       @gender = gender 
+       @badge_num = badge_num
 
-    #     @@all << self 
-    # end 
-
-    # def self.all
-    #     @@all 
-    # end 
-
-    def get_officer_details 
-        Popo::Scraper.officer_scrape
+       save_info
     end 
-    
-    # def self.find_officer # tells program to find the corresponding officer's name
-    #     @@all.detect {|officer| officer.name == name} # double equals comparison operator
-    # end 
 
-    # def self.find_info_between_markers(marker1, marker2)
-    #    self[/#{Regexp.escape(marker1)}(.*?)#{Regexp.escape(marker2)}/m, 1] # putting the m modifier after the regex allows this method to search beyond just one line
-    # end 
+    def self.all 
+        @@all
+    end
 
-    # def reading_officers
+    def save_info 
+        @@all << self
+    end 
 
-    # end 
+    def self.find_officer(id)
+        @@all[id.to_i-1] # looks at array, finds officer by running "index - 1"
+    end 
 
-    # make separate file for scraping 
+    def self.list_officers 
+        self.all.each.with_index(1) do |officer, index|
+            puts "#{index}." + " #{officer.name}".colorize(:red)
+        end
+    end 
+
+    def self.list_officer_info(index)
+        officer = self.find_officer(index)
+        puts " ----------------------------------------------------------------------------------- "
+        puts "|                    Name: ".colorize(:red) + "#{officer.name}                      |"
+        puts "|                    Badge #: ".colorize(:red) + "#{officer.badge_num}              |"
+        puts "|                    Race: ".colorize(:red) + "#{officer.race}                      |" 
+        puts "|                    Sex:".colorize(:red) + "#{officer.gender}                      |"
+        puts " ----------------------------------------------------------------------------------- "
+    end 
    
 end
